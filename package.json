@@ -3,14 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://dafear.github.io/showtime",
-
   "dependencies": {
+    "history": "^4.6.1",
+    "npm-run-all": "^4.0.2",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
-  
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "enzyme": "^2.8.2",
+    "eslint": "^4.0.0",
     "gh-pages": "^1.0.0",
+    "react-redux": "^5.0.5",
     "react-scripts": "1.0.7"
   },
   "scripts": {
@@ -20,5 +26,5 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-}
+  }
 }
