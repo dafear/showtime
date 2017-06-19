@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://dafear.github.io/showtime",
   "dependencies": {
+    "axios": "^0.16.2",
     "history": "^4.6.1",
     "npm-run-all": "^4.0.2",
     "react": "^15.5.4",
