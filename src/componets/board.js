@@ -3,11 +3,11 @@ import React from 'react';
 // import Code7 from './code7';
 import { connect } from 'react-redux';
 import { search } from '../actions/search'
-// import Classie from './classie';
-// import Code7 from './code7';
-// import Modernizr from './modernizr.custom';
+ //import Classie from './classie';
+ //import Code7 from './code7';
+ //import Modernizr from './modernizr.custom';
 import './board.css';
-// import './demo.css';
+ import './demo.css';
 
 import axios from 'axios';
 
@@ -91,18 +91,21 @@ class Board extends React.Component {
     
     return (
       <div className="board" style={style}>
-        <div>
-          <form onSubmit={this.onSubmit}><input value={this.state.term} onChange={this.onChange} />
+        
+          <form className="js-search-form" onSubmit={this.onSubmit}>
+          <input value={this.state.term} onChange={this.onChange} />
            <button disabled={!isEnabled}>Search</button>
           
           </form>
           
-
+         <div className={ 'overlay overlay-hugeinc ' + (venues.length > 0 ? 'open' : '') }>
+               <button type="button" className={ "overlay-close" }>Close</button> 
+           <div className="js-search-results"> 
           { venues }
 
         </div>
       </div>
-      
+      </div>
     )
 
   }
