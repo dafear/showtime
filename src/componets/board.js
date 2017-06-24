@@ -12,10 +12,19 @@ import './board.css';
 import axios from 'axios';
 
 class Board extends React.Component {
+  constructor(props) {
+    super(props);
+    this.saveVenues = this.saveVenues.bind(this);
+  }
+
   state = { term: '', venues: [] };
   
   onChange = (e) => {
     this.setState({ term: e.target.value })
+  }
+
+  clearSearch = (e) => {
+    this.setState({venues: []})
   }
 
   onSubmit = e => {
@@ -32,6 +41,31 @@ class Board extends React.Component {
 
     });
   }
+   
+   saveVenues(venues) {
+
+    const places = [];
+    this.state.venues.forEach(venue => {
+      const record = {
+        name: venue.name,
+        address: venue.location.address,
+        city: venue.location.city,
+        url: venue.url
+      };
+      places.push(record);
+   });
+  console.log(places);
+
+   axios.post('http://localhost:8080/savedSearches', 
+     JSON.stringify(places)
+      
+    )
+     .then(response => {
+       console.log("the server has responded",response);
+     });
+
+   }
+
 
    filterVenues(venues) {
    
@@ -67,8 +101,22 @@ class Board extends React.Component {
   render() {
     const style = {
       textAlign: 'center',
+    
     };
 
+     const buttonStyle = {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: 75,
+      padding: 3,
+      font: 12,
+    };
+
+      const button2Style = {
+         marginTop: 0,
+         
+       };
   
    let venues = [];
 
@@ -80,26 +128,23 @@ class Board extends React.Component {
            <p> { venue.location.address } </p>
            <p> { venue.location.city } </p>
 
-
-         </li>);
-        
+         </li>);    
     });
 
-     const isEnabled = this.canBeSubmitted();
-
-     
+     const isEnabled = this.canBeSubmitted();   
     
     return (
       <div className="board" style={style}>
         
           <form className="js-search-form" onSubmit={this.onSubmit}>
           <input value={this.state.term} onChange={this.onChange} />
-           <button disabled={!isEnabled}>Search</button>
+           <br/><button style={button2Style} disabled={!isEnabled}>Search</button>
           
           </form>
           
          <div className={ 'overlay overlay-hugeinc ' + (venues.length > 0 ? 'open' : '') }>
-               <button type="button" className={ "overlay-close" }>Close</button> 
+               <button type="button" onClick={this.clearSearch} className={ "overlay-close" }>Close</button> 
+               <button style={buttonStyle} type="button" onClick={this.saveVenues} className="button-save">save search</button>
            <div className="js-search-results"> 
           { venues }
 
@@ -115,44 +160,3 @@ class Board extends React.Component {
 export default connect(undefined, { search })(Board)
 
 
-// export default function Board() {
-
-//        const style = {
-//              textAlign: 'center',
-//            };
-
-//     return (
-
-
-//               <div className="board" style={style}>
-//         <div>
-
-
-//              <h1><NavLink to="/">Find a show in NYC</NavLink></h1>
-//         (e.g. music, comedy, theater)
-//          <p>play around with related terms and get more results</p>
-//            <form className="js-search-form">
-
-
-//              <label for="query"></label>
-//          <input type="text" name="searchQuery" class="js-query" id="searchInput"></input><br></br>
-//       <input id="trigger-overlay" type="submit" class="enableOnInput" disabled="disabled"></input>
-
-
-//   </form>
-
-//        <div class="overlay overlay-hugeinc"> 
-//                  <button type="button" class="overlay-close">Close</button> 
-//                <button type="button" class="button-save">save search</button>
-//       <div class="js-search-results">
-
-//     </div>
-//   </div>
-//   </div>
-//  </div>
-
-
-
-
-//     );
-// }
