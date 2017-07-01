@@ -18,7 +18,7 @@ class Board extends React.Component {
     this.saveVenues = this.saveVenues.bind(this);
   }
 
-  state = { term: '', venues: [] };
+  state = { term: '', venues: [], warning: '' };
   
   onChange = (e) => {
     this.setState({ term: e.target.value })
@@ -35,9 +35,9 @@ class Board extends React.Component {
  
     return axios.get(URL)
     .then(response => {
-      console.log(response)
       if(response.data.response) {
-        this.filterVenues(response.data.response.venues)
+        const venues = response.data.response.venues;
+        this.filterVenues(venues);        
       }
 
     });
@@ -84,7 +84,10 @@ class Board extends React.Component {
     })
     return venueItem;
   })
-
+  console.log('venues', places);
+  if (places.length===0 && this.state.term.length>0) {
+    this.setState({warning: "no results"});
+  }
   this.setState({venues: places}) 
   
  }
@@ -148,14 +151,12 @@ class Board extends React.Component {
 
 
 
-      let warning = null 
+      // let warning = null 
       
      
-      if (this.state.venues.length===0 && this.state.term.length>0) {
-        warning = <div>no results</div>
-        
-      }
-      console.log(warning)
+     
+      console.log(this.state.warning);
+
       return (
         <div className="board" style={style}>
         
@@ -164,14 +165,14 @@ class Board extends React.Component {
            <br/><button style={button2Style} disabled={!isEnabled}>Search</button>
           
           </form>
-          
+          <p>{ this.state.warning }</p>
          <div className={ 'overlay overlay-hugeinc ' + (venues.length > 0 ? 'open' : '') }>
                <button type="button" onClick={this.clearSearch} className={ "overlay-close" }>Close</button> 
                <button style={buttonStyle} type="button" onClick={this.saveVenues} className="button-save">save search</button>
                <Link  style={savedStyle} to="/saves">Go to saved searches</Link>
            <div className="js-search-results"> 
-          { venues }
-          { warning }
+          <p>{ venues }</p>
+          
 
 
 
