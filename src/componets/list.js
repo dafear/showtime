@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 // import createHistory from 'history/createBrowserHistory'
 import Board from './board';
+import Saved from './saved'; 
 
 
 
@@ -67,6 +68,7 @@ render() {
        <Router>
        <div> 
        <Route exact path="/" render={() => <Redirect to="/board" />} />
+       <Route exact path="/saves" component={Saved} />
        <Route exact path="/myboard" component={Board} />
      <Route exact path="/board" render={() => (
        this.state.logged ? (
