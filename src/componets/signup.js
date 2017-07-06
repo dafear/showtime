@@ -1,8 +1,10 @@
 import React from 'react';
+import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import axios from 'axios';
 import Board from './board';
 import Saved from './saved'; 
-import axios from 'axios';
-import './list.css';
+import './board.css';
+
 
 
 export default class List extends React.Component {
@@ -15,22 +17,22 @@ export default class List extends React.Component {
     };
   }
 
-
-  handleEmailChange = (evt) => {
+handleEmailChange = (evt) => {
     this.setState({ email: evt.target.value });
   }
 
-  handlePasswordChange = (evt) => {
+handlePasswordChange = (evt) => {
     this.setState({ password: evt.target.value });
   }
 
-   handleSubmit = (evt) => {
+handleSubmit = (evt) => {
     if (!this.canBeSubmitted()) {
       evt.preventDefault();
 
     axios.post("localhost:8080/login", {
     userName: this.state.email,
     password: this.state.password,
+    
 
   })
   .then(response => {
@@ -44,11 +46,11 @@ export default class List extends React.Component {
 
       return;
     }
-    const { email, password } = this.state;
-    alert(`Signed up with userName: ${email} password: ${password}`);
+    const { userName, password } = this.state;
+    alert(`Signed up with userName: ${userName} password: ${password}`);
   }
 
- canBeSubmitted() {
+canBeSubmitted() {
     const { email, password } = this.state;
     return (
       email.length > 0 &&
@@ -56,27 +58,39 @@ export default class List extends React.Component {
     );
   }
 
-      goToBoard(event) {
-        event.preventDefault();
-       if(this.canBeSubmitted()) {this.setState({logged: true})}
+ goToBoard(event) {
+           event.preventDefault();
+        if(this.canBeSubmitted()) {this.setState({logged: true})}
 
-      }
+     }
+
 
 
 render() {
-     const isEnabled = this.canBeSubmitted();
+    const isEnabled = this.canBeSubmitted();
 
-      
-        const style = {
+      // const history = createHistory()
+
+       const style = {
             textAlign: 'center',
-            };
+           };
+
+
 
   return (
-        <div style={style}>
-          
+       <Router>
+       <div> 
+       <Route exact path="/" render={() => <Redirect to="/board" />} />
+       <Route exact path="/saves" component={Saved} />
+       <Route exact path="/myboard" component={Board} />
+     <Route exact path="/board" render={() => (
+       this.state.logged ? (
+        <Redirect to="/myboard"/>
+        ) : (
+          <div className="list" style={style}>
 
 
-      <form onSubmit={e => this.goToBoard(e)}>
+            <form onSubmit={e => this.goToBoard(e)}>
                 
                   <h1>Showtime</h1>
               <input
@@ -93,40 +107,11 @@ render() {
                 />
                 <button disabled={!isEnabled}>Sign up</button>
               </form>
-
-
-
-        </div>
-     
-        
-         
-      ); 
-    }
+              </div>
+        )
+     )} />
+         </div>
+         </Router>
+    )
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
