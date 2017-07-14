@@ -83,7 +83,7 @@ render() {
         position: 'absolute',
         left: 0,
         right: 0,
-        backgroundColor: 'blue',
+        backgroundColor: '#99c5ff',
         borderRadius: 5,
         width: 75,
         textAlign: 'center',
@@ -91,7 +91,7 @@ render() {
         bottom: 20,
         margin: "auto",
         color: 'white',
-
+        fontSize: 18, 
        };
     
 
@@ -114,7 +114,7 @@ render() {
                <form onSubmit={this.handleSubmit}>
                 
                   <h1>Showtime</h1>
-
+                   <h2 className="subtitle"> Sign up for access to the best shows in any genre!</h2>
               <input
                   type="text"
                   placeholder="Enter email"
@@ -128,7 +128,8 @@ render() {
                   onChange={this.handlePasswordChange}
                 /><br/>
                 <button disabled={!isEnabled}>Sign up</button>
-               <Link  style={savedStyle} to="/signin">Signin</Link>
+
+               <Link  style={savedStyle} to="/signin">Sign In</Link>
               </form>
               </div>
         )

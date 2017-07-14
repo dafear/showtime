@@ -77,20 +77,20 @@ render() {
            };
 
 
-        const savedStyle2 = {
-        position: 'absolute',
-         left: 0,
-         right: 0,
-        backgroundColor: '#99c5ff',
-        borderRadius: 5,
-        width: 75,
-        textAlign: 'center',
-        padding: 5,
-        bottom: 20,
-        margin: "auto",
-        color: 'white',
+       //  const savedStyle2 = {
+       //  position: 'absolute',
+       //   left: 0,
+       //   right: 0,
+       //  backgroundColor: '#99c5ff',
+       //  borderRadius: 5,
+       //  width: 75,
+       //  textAlign: 'center',
+       //  padding: 5,
+       //  bottom: 20,
+       //  margin: "auto",
+       //  color: 'white',
 
-       };
+       // };
 
 
            
@@ -108,6 +108,7 @@ render() {
         <form onSubmit={this.handleSubmit}>
                 
                   <h1>Showtime</h1>
+                  <h2> get ready to rock and roll</h2>
               <input
                   type="text"
                   placeholder="Enter email"

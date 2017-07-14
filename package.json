@@ -23,9 +23,9 @@
     "gh-pages": "^1.0.0",
     "jest": "^20.0.4",
     "react-redux": "^5.0.5",
-    "react-scripts": "1.0.7",
+    "react-scripts": "1.0.10",
     "react-test-renderer": "^15.6.1",
-    "webpack": "^3.0.0"
+    "webpack": "^3.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

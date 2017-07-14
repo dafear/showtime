@@ -56,12 +56,17 @@ filterVenues(venues) {
       position: 'absolute',
       top: 0,
       left: 0,
-      backgroundColor: 'blue',
-      borderRadius: 5,
+      backgroundColor: '#99c5ff',
+      borderRadius: 3,
       width: 72,
       textAlign: 'center',
       padding: 5,
-      color: 'white'
+      color: 'white',
+      margin: 5,
+      fontSize: 14,
+
+      // margin: 5,
+
       // width: 75,
       // padding: 3,
       // font: 12,
@@ -71,7 +76,7 @@ filterVenues(venues) {
        this.state.results.forEach((venue, i,) => {
       venues.push( 
         <li key={i}>
-           <a target='_blank' href={venue.url}>{ venue.name}</a>
+           <a rel="noreferrer noopener" target='_blank' href={venue.url}>{ venue.name}</a>
            <p> {venue.name} </p>
             <p> { venue.address } </p>
            <p> { venue.city } </p>

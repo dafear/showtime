@@ -133,7 +133,9 @@ import axios from 'axios';
       left: 0,
       width: 75,
       padding: 3,
-      font: 8,
+      fontSize: 14,
+      borderRadius: 5,
+      margin: 5,
     };
 
       const button2Style = {
@@ -144,8 +146,9 @@ import axios from 'axios';
         position: 'absolute',
         left: 0,
         top: 75,
-        backgroundColor: 'blue',
-        borderRadius: 5,
+        margin: 5,
+        backgroundColor: '#99c5ff',
+        borderRadius: 3,
         width: 72,
         textAlign: 'center',
         padding: 5,
@@ -161,13 +164,14 @@ import axios from 'axios';
          right: 0,
         backgroundColor: '#99c5ff',
         borderRadius: 5,
-        width: 69,
+        width: '98px',
         textAlign: 'center',
         padding: 5,
         bottom: 20,
         margin: "auto",
         color: 'white',
-
+        fontSize: 14,
+        fontWeight: 400,
        };
 
 
@@ -178,7 +182,7 @@ import axios from 'axios';
 
       venues.push( 
         <li key={i}>
-        <a target='_blank' href={venue.url}>{ venue.name}</a>
+        <a rel="noreferrer noopener" target='_blank' href={venue.url}>{ venue.name}</a>
           <p> { venue.name } </p>
            <p> { venue.location.address } </p>
            <p> { venue.location.city } </p>
@@ -200,6 +204,9 @@ import axios from 'axios';
         
           <form className="js-search-form" onSubmit={this.onSubmit}>
                  <h1>Showtime</h1>
+                 <h2> (e.g. music, comedy, theater)
+            play around with related terms and get more results</h2>
+
           <input value={this.state.term} onChange={this.onChange} />
            <br/><button style={button2Style} disabled={!isEnabled}>Search</button>
 
