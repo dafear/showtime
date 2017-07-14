@@ -12,16 +12,17 @@ import './demo.css';
 
 import axios from 'axios';
 
-class Board extends React.Component {
+ class Board extends React.Component {
   constructor(props) {
     super(props);
     this.saveVenues = this.saveVenues.bind(this);
+    this.state = { term: '', venues: [], warning: '' };
   }
 
-  state = { term: '', venues: [], warning: '' };
+  
   
   onChange = (e) => {
-    this.setState({ term: e.target.value })
+    this.setState({ term: e.target.value, warning: '' })
   }
 
   clearSearch = (e) => {
@@ -35,9 +36,9 @@ class Board extends React.Component {
  
     return axios.get(URL)
     .then(response => {
-      // console.log(response)
+      
       if(response.data.response) {
-        // this.filterVenues(response.data.response.venues) 
+        
         const venues = response.data.response.venues;
         this.filterVenues(venues);
       }
@@ -88,10 +89,13 @@ class Board extends React.Component {
   })
     
     console.log('venues', places);
-    if (places.length===0 && this.state.term.length>0) {
-      this.setState({warning: "no results"});
-    }
-   
+
+    if (places.length===0 && this.state.term.length > 0) {
+      this.setState({warning: "No results"});
+      
+
+    } 
+    
 
 
   this.setState({venues: places}) 
@@ -107,6 +111,15 @@ class Board extends React.Component {
     );
   }
 
+
+ logOut () {
+   localStorage.removeItem('apiToken')
+    window.location.href = "/signin"
+   }
+
+
+
+
   render() {
 
     const style = {
@@ -120,7 +133,7 @@ class Board extends React.Component {
       left: 0,
       width: 75,
       padding: 3,
-      font: 12,
+      font: 8,
     };
 
       const button2Style = {
@@ -133,11 +146,32 @@ class Board extends React.Component {
         top: 75,
         backgroundColor: 'blue',
         borderRadius: 5,
-        width: 75,
+        width: 72,
         textAlign: 'center',
         padding: 5,
+        font: 8,
+        color: 'white',
        }
-  
+
+
+
+       const savedStyle2 = {
+        position: 'absolute',
+         left: 0,
+         right: 0,
+        backgroundColor: '#99c5ff',
+        borderRadius: 5,
+        width: 69,
+        textAlign: 'center',
+        padding: 5,
+        bottom: 20,
+        margin: "auto",
+        color: 'white',
+
+       };
+
+
+
    let venues = [];
 
     this.state.venues.forEach((venue, i,) => {
@@ -157,14 +191,7 @@ class Board extends React.Component {
 
 
 
-      // let warning = null 
-      
      
-      // if (this.state.venues.length===0 && this.state.term.length>0) {
-      //   warning = <div>no results</div>
-        
-      // }
-      // // console.log(warning)
 
 
       console.log(this.state.warning);
@@ -172,8 +199,12 @@ class Board extends React.Component {
         <div className="board" style={style}>
         
           <form className="js-search-form" onSubmit={this.onSubmit}>
+                 <h1>Showtime</h1>
           <input value={this.state.term} onChange={this.onChange} />
            <br/><button style={button2Style} disabled={!isEnabled}>Search</button>
+
+            <button  onClick={this.logOut} style={savedStyle2}>Log Out</button>
+
           
           </form>
           <p>{ this.state.warning }</p>

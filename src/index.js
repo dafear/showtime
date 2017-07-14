@@ -6,9 +6,9 @@ import store from './store';
 
 // import Board from './componets/board';
 import List from './componets/list';
+// import './componets/board.css';
 
 import registerServiceWorker from './registerServiceWorker';
-import './index.css';
 
 
 

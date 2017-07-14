@@ -1,19 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import List from './componets/list';
+import Saved from './saved';
 import {shallow, mount} from 'enzyme';
 
 
 
 
-describe('<List />', () => {
+describe('<Saved />', () => {
 
 it('Renders without crashing', () => {
-    shallow(<List/>);
+    shallow(<Saved/>);
 });
+
 });
-
-
-  
-
- 

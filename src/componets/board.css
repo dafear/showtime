@@ -9,7 +9,7 @@ html, body {
   display: none;
 }*/
 
-body {
+.board {
   background: #000000;
   color: white;
   font-family: 'Roboto', helvetica, sans-serif;
@@ -19,6 +19,14 @@ body {
   background-image: url("../background.png");
   background-repeat: no-repeat;
   background-size: cover;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
  
 }
 

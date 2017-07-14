@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 import './board.css';
 
 export default class Saved extends React.Component {
@@ -43,9 +44,27 @@ filterVenues(venues) {
 
     render() {
 
+  
+     
+
     	 const style = {
       textAlign: 'center',
     
+    };
+
+     const buttonStyle = {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      backgroundColor: 'blue',
+      borderRadius: 5,
+      width: 72,
+      textAlign: 'center',
+      padding: 5,
+      color: 'white'
+      // width: 75,
+      // padding: 3,
+      // font: 12,
     };
     	
         let venues = [];
@@ -66,10 +85,17 @@ filterVenues(venues) {
            
        
 		return (
+      
+		        <div style={style} className="saved">
 
-		<div style={style} className="saved">
-		  {venues}   
+           <Link  style={buttonStyle} to="/myboard">Go back to searches</Link>
+		  {venues} 
+     
 		    </div>
+          
+
+     
+     
      );
 	}
 

@@ -1,30 +1,23 @@
 import React from 'react';
-// import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
-// import createHistory from 'history/createBrowserHistory'
- import Board from './board';
- import Saved from './saved'; 
-// import { search } from '../actions/search'
+import './list.css';
 import axios from 'axios';
 
 
 
-import './list.css';
 
-
-export default class List extends React.Component {
+export default class Signin extends React.Component {
   constructor() {
     super();
     this.state = {
-      userName: '',
+      email: '',
       password: '',
       logged: false,
+      showError: false,
     };
   }
 
-
-
 handleEmailChange = (evt) => {
-    this.setState({ userName: evt.target.value });
+    this.setState({ email: evt.target.value });
   }
 
 handlePasswordChange = (evt) => {
@@ -32,107 +25,108 @@ handlePasswordChange = (evt) => {
   }
 
 handleSubmit = (evt) => {
-    if (!this.canBeSubmitted()) {
+    if (this.canBeSubmitted()) {
+      var instance = axios.create({ headers: { 'Content-Type': 'application/json' } });
       evt.preventDefault();
+      console.log(this.state.email);
+      console.log(this.state.password);
 
-    axios.post("localhost:8080/login", {
-    userName: this.state.userName,
-    password: this.state.password,
-    
+      return instance.post("http://localhost:8080/login", {
+        
+        email: this.state.email,
+        password: this.state.password,
+      })
+        .then(response => {
+          console.log("It worked the server responded with:", response.data);
+          localStorage.setItem('apiToken', response.data.token);
+          this.goToBoard(); // you may have to implement a way to change the route of the page or hide the form when "logged in" is true
+        })
+        .catch(error => {
+          this.setState({error:error});
+          // console.log(error, "watch me");
+        });
+      // return;
+    } else {
+      alert("You need an email and password");
 
-  })
-  .then(response => {
-    console.log("It worked the server responded with:");
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-
-
-
-      return;
     }
-    const { userName, password } = this.state;
-    alert(`Signed up with userName: ${userName} password: ${password}`);
-  }
-
+   }
 canBeSubmitted() {
-    const { userName, password } = this.state;
+    const { email, password } = this.state;
     return (
-      userName.length > 0 &&
+      email.length > 0 &&
       password.length > 0
     );
   }
 
- goToBoard(event) {
-           event.preventDefault();
+ goToBoard() {
+           // event.preventDefault();
         if(this.canBeSubmitted()) {this.setState({logged: true})}
-
+               window.location.href = "/myboard"
      }
-
-
-   
-
-
 
 
 
 render() {
-     const isEnabled = this.canBeSubmitted();
+    const isEnabled = this.canBeSubmitted();
 
       // const history = createHistory()
 
-        const style = {
+       const style = {
             textAlign: 'center',
-            };
+           };
 
+
+        const savedStyle2 = {
+        position: 'absolute',
+         left: 0,
+         right: 0,
+        backgroundColor: '#99c5ff',
+        borderRadius: 5,
+        width: 75,
+        textAlign: 'center',
+        padding: 5,
+        bottom: 20,
+        margin: "auto",
+        color: 'white',
+
+       };
+
+
+           
+        let errorMessage = ""
+        if (this.state.error && this.state.password.length > 0) {
+        errorMessage =  "Sorry incorrect password!" 
+      
+        }
 
 
   return (
-        <div>
-          
 
+       <div className="Signin" style={style}>
 
-      <form onSubmit={e => this.goToBoard(e)}>
+        <form onSubmit={this.handleSubmit}>
                 
                   <h1>Showtime</h1>
               <input
                   type="text"
-                  placeholder="Enter userName"
-                  value={this.state.userName}
+                  placeholder="Enter email"
+                  value={this.state.email}
                   onChange={this.handleEmailChange}
-                />
+                /><br/>
                 <input
                   type="password"
                   placeholder="Enter password"
                   value={this.state.password}
                   onChange={this.handlePasswordChange}
-                />
-                <button disabled={!isEnabled}>Sign up</button>
+                /><br/>
+                <button disabled={!isEnabled}>Sign In</button>
+                <p>{errorMessage}</p>
+                
               </form>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </div>
-     
+              </div>
         
-         
- ); 
+    )
+  }
 }
-}
-
-
