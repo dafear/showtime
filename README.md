@@ -11,7 +11,8 @@ They're both intrested in the hottest venues but the problem with randomly using
 
 ##This App works by first adding a search to the input then pressing the "savedSearches" button once the overlay is triggered. The saved searches can then be seen on the saved searches page.
 
-#
+![screen shot 2017-07-15 at 2 10 01 am](https://user-images.githubusercontent.com/24307157/28237024-e67a53dc-6903-11e7-93b4-c43e92a75542.png)
+
 
 
 ## Technologies used were HTML/CSS/JavaScript/jQuery/FourSquares Api/React/Jsx/Mongodb/Cors
