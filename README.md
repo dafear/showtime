@@ -1,7 +1,4 @@
-# The name of App is Showtime
-
-# 
-# I've included a screenshot of my capture page labled capture.png
+# The name of my App is Showtime
 
 
 ##Use Case Why is this app useful?  Artist of every genre and people looking for shows both have something in common.
@@ -11,6 +8,7 @@ They're both intrested in the hottest venues but the problem with randomly using
 
 ##This App works by first registering then signing in. You are then taken to the search page where you can add a search to the input then  press the "savedSearches" button and once the overlay is triggered you can see your search by going to the saved searches page.
 
+# Here are some screen shots
 
 ![screen shot 2017-07-15 at 2 10 51 am](https://user-images.githubusercontent.com/24307157/28237056-826c6a14-6904-11e7-919e-b25bcc02d21c.png)       ![screen shot 2017-07-15 at 2 10 25 am](https://user-images.githubusercontent.com/24307157/28237118-b46c3516-6905-11e7-9118-fbcaa51f64bd.png)
 
