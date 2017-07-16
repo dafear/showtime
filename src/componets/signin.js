@@ -31,7 +31,7 @@ handleSubmit = (evt) => {
       console.log(this.state.email);
       console.log(this.state.password);
 
-      return instance.post("http://localhost:8080/login", {
+      return instance.post("https://showtime-api-pqxlduhnpg.now.sh/login", {
         
         email: this.state.email,
         password: this.state.password,

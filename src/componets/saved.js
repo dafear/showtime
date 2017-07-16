@@ -10,7 +10,7 @@ export default class Saved extends React.Component {
 		this.state={results: []};
 	}
 	 componentDidMount() {
-      return axios.get('http://localhost:8080/searches')
+      return axios.get('https://showtime-api-pqxlduhnpg.now.sh/searches')
       .then(response => {
       	console.log(response);
       	this.setState({results: response.data});

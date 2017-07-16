@@ -59,7 +59,7 @@ import axios from 'axios';
       places.push(record);
    });
   
-   axios.post('http://localhost:8080/savedSearches', 
+   axios.post('https://showtime-api-pqxlduhnpg.now.sh/savedSearches', 
      // JSON.stringify(places)
       {places: places}
     )
