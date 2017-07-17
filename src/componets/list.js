@@ -97,7 +97,7 @@ render() {
 
   return (
        <Router>
-       <div> 
+         <div> 
        <Route exact path="/" render={() => <Redirect to="/board" />} />
           <Route exact path="/saves" component={Saved} />
            <Route exact path="/signin" component={Signin} />
@@ -131,8 +131,8 @@ render() {
 
                <Link  style={savedStyle} to="/signin">Sign In</Link>
               </form>
-              </div>
-        )
+            </div>
+          )
      )} />
          </div>
          </Router>

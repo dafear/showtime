@@ -22,7 +22,7 @@ export default function card(props) {
                <Link style={style2}  to="/signin">Go Sign In</Link>
         </div>
       );    
-  };
+  }
 
 
 

@@ -39,6 +39,7 @@ handleSubmit = (evt) => {
         .then(response => {
           console.log("It worked the server responded with:", response.data);
           localStorage.setItem('apiToken', response.data.token);
+          localStorage.setItem('email', this.state.email);
           this.goToBoard(); // you may have to implement a way to change the route of the page or hide the form when "logged in" is true
         })
         .catch(error => {
@@ -77,26 +78,12 @@ render() {
            };
 
 
-       //  const savedStyle2 = {
-       //  position: 'absolute',
-       //   left: 0,
-       //   right: 0,
-       //  backgroundColor: '#99c5ff',
-       //  borderRadius: 5,
-       //  width: 75,
-       //  textAlign: 'center',
-       //  padding: 5,
-       //  bottom: 20,
-       //  margin: "auto",
-       //  color: 'white',
-
-       // };
 
 
            
         let errorMessage = ""
-        if (this.state.error && this.state.password.length > 0) {
-        errorMessage =  "Sorry incorrect password!" 
+          if (this.state.error && this.state.password.length > 0) {
+            errorMessage =  "Sorry incorrect password!" 
       
         }
 
@@ -105,7 +92,7 @@ render() {
 
        <div className="Signin" style={style}>
 
-        <form onSubmit={this.handleSubmit}>
+           <form onSubmit={this.handleSubmit}>
                 
                   <h1>Showtime</h1>
                   <h2> get ready to rock and roll</h2>
@@ -130,4 +117,4 @@ render() {
         
     )
   }
-};
+}

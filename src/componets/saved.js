@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom'
 import './board.css';
 
-export default class Saved extends React.Component {
+ export default class Saved extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -18,21 +18,21 @@ export default class Saved extends React.Component {
 	 }
 
 
-filterVenues(venues) {
+ filterVenues(venues) {
    
    let places = []
    
-   let contegrityID = ["4d4b7104d754a06370d81259","4bf58dd8d48988d1e5931735","4bf58dd8d48988d1e7931735","4bf58dd8d48988d1e8931735","4bf58dd8d48988d1e9931735","5267e4d9e4b0ec79466e48d1","4bf58dd8d48988d18e941735","4bf58dd8d48988d1f2931735","4bf58dd8d48988d137941735","5032792091d4c4b30a586d5c","507c8c4091d498d9fc8c67a9","4bf58dd8d48988d136941735","4bf58dd8d48988d135941735","4bf58dd8d48988d11f941735",]
+    let contegrityID = ["4d4b7104d754a06370d81259","4bf58dd8d48988d1e5931735","4bf58dd8d48988d1e7931735","4bf58dd8d48988d1e8931735","4bf58dd8d48988d1e9931735","5267e4d9e4b0ec79466e48d1","4bf58dd8d48988d18e941735","4bf58dd8d48988d1f2931735","4bf58dd8d48988d137941735","5032792091d4c4b30a586d5c","507c8c4091d498d9fc8c67a9","4bf58dd8d48988d136941735","4bf58dd8d48988d135941735","4bf58dd8d48988d11f941735",]
   
-   venues.filter(function(venueItem) {
-    
+      venues.filter(function(venueItem) {
 
-    venueItem.categories.forEach(function(category) {
-    if (contegrityID.includes(category.id)) {
-    
-        places.push(venueItem);
-     } 
-    })
+        venueItem.categories.forEach(function(category) {
+
+         if (contegrityID.includes(category.id)) {
+              places.push(venueItem);
+         } 
+      })
+
     return venueItem;
   })
 
@@ -40,12 +40,7 @@ filterVenues(venues) {
   
  }
 
-
-
     render() {
-
-  
-     
 
     	 const style = {
       textAlign: 'center',
@@ -65,11 +60,7 @@ filterVenues(venues) {
       margin: 5,
       fontSize: 14,
 
-      // margin: 5,
-
-      // width: 75,
-      // padding: 3,
-      // font: 12,
+     
     };
     	
         let venues = [];
@@ -78,31 +69,19 @@ filterVenues(venues) {
         <li key={i}>
            <a rel="noreferrer noopener" target='_blank' href={venue.url}>{ venue.name}</a>
            <p> {venue.name} </p>
-            <p> { venue.address } </p>
+           <p> { venue.address } </p>
            <p> { venue.city } </p>
 
-
-
-
-            </li>);
+        </li>);
 
      });         
            
        
 		return (
-      
-		        <div style={style} className="saved">
-
-           <Link  style={buttonStyle} to="/myboard">Go back to searches</Link>
+         <div style={style} className="saved">
+          <Link  style={buttonStyle} to="/myboard">Go back to searches</Link>
 		  {venues} 
-     
-		    </div>
-          
-
-     
-     
+       </div>   
      );
-	}
-
-	
-};
+	}	
+}

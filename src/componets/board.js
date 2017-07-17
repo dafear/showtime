@@ -1,12 +1,7 @@
 import React from 'react';
-// import { NavLink } from 'react-router-dom';
-// import Code7 from './code7';
 import { connect } from 'react-redux';
 import { search } from '../actions/search'
 import { Link } from 'react-router-dom'
- //import Classie from './classie';
- //import Code7 from './code7';
- //import Modernizr from './modernizr.custom';
 import './board.css';
 import './demo.css';
 
@@ -193,19 +188,17 @@ import axios from 'axios';
 
      const isEnabled = this.canBeSubmitted(); 
 
-
-
-     
-
-
       console.log(this.state.warning);
+      
       return (
         <div className="board" style={style}>
         
           <form className="js-search-form" onSubmit={this.onSubmit}>
                  <h1>Showtime</h1>
+
                  <h2> (e.g. music, comedy, theater)
             play around with related terms and get more results</h2>
+            <h3>Welcome Back {localStorage.getItem('email')}</h3>
 
           <input value={this.state.term} onChange={this.onChange} />
            <br/><button style={button2Style} disabled={!isEnabled}>Search</button>
