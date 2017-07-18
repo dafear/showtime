@@ -1,4 +1,4 @@
-aimport React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import Card from './card';
 import {shallow, mount} from 'enzyme';
