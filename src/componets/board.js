@@ -73,6 +73,7 @@ import axios from 'axios';
                                            {places: places, term: this.state.term}
 
                                            )
+                                      
                                       .then(response => {  
                                           localStorage.setItem('term', this.state.term); 
                                           console.log("the server has responded",response);
