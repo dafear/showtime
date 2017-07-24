@@ -10,7 +10,8 @@ import './board.css';
 		this.state={results: []};
 	}
 	 componentDidMount() {
-      return axios.get('https://showtime-api-pqxlduhnpg.now.sh/searches')
+    console.log('whatever');
+      return axios.get('https://showtime-api-zszisxhapr.now.sh/searches')
       .then(response => {
       	console.log(response);
       	this.setState({results: response.data});
@@ -64,23 +65,33 @@ import './board.css';
     };
     	
         let venues = [];
-       this.state.results.forEach((venue, i,) => {
-      venues.push( 
-        <li key={i}>
-           <a rel="noreferrer noopener" target='_blank' href={venue.url}>{ venue.name}</a>
-           <p> {venue.name} </p>
-           <p> { venue.address } </p>
-           <p> { venue.city } </p>
+       this.state.results.forEach((result, i) => {
+  let places = result.results.map((venue, j) => {
+    return (
+      <li key={j}>
+        <a rel="noreferrer noopener" target='_blank' href={venue.url}>{venue.name}</a>
+        <p>{venue.name}</p>
+        <p>{venue.address}</p>
+        <p>{venue.city}</p>
+      </li>
+    )
+  });
 
-        </li>);
+  venues.push(
+    <li  key={i}>
+      <h3>Term: "{result.term}"</h3>
+      <p> {result.searchedAt} </p>
+      <ul style={{ listStyleType: 'none' }}>{places}</ul>
+      
+    </li>
+  )
+});
 
-     });         
-           
        
 		return (
          <div style={style} className="saved">
           <Link  style={buttonStyle} to="/myboard">Go back to searches</Link>
-		  {venues} 
+		       {venues}
        </div>   
      );
 	}	

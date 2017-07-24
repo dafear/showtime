@@ -10,7 +10,7 @@ describe('<List />', () => {
 
 it('Renders without crashing', () => {
     shallow(<List/>);
-});
+  });
 });
 
 

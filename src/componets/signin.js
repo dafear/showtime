@@ -31,7 +31,7 @@ handleSubmit = (evt) => {
       console.log(this.state.email);
       console.log(this.state.password);
 
-      return instance.post("https://showtime-api-pqxlduhnpg.now.sh/login", {
+      return instance.post('https://showtime-api-zszisxhapr.now.sh/login', {
         
         email: this.state.email,
         password: this.state.password,
@@ -42,6 +42,7 @@ handleSubmit = (evt) => {
           localStorage.setItem('email', this.state.email);
           this.goToBoard(); // you may have to implement a way to change the route of the page or hide the form when "logged in" is true
         })
+        
         .catch(error => {
           this.setState({error:error});
           // console.log(error, "watch me");
@@ -95,7 +96,8 @@ render() {
            <form onSubmit={this.handleSubmit}>
                 
                   <h1>Showtime</h1>
-                  <h2> get ready to rock and roll</h2>
+                  <h2> Get ready to rock and roll!</h2>
+
               <input
                   type="text"
                   placeholder="Enter email"
