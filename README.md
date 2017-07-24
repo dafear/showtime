@@ -9,7 +9,7 @@ They're both intrested in the hottest venues but the problem with randomly using
 ##This App works by first registering then signing in. You are then taken to the search page where you can add a search to the input then  press the "savedSearches" button and once the overlay is triggered you can see your search by going to the saved searches page.
 
 
-## To access the site go here:  https://showtime-ynpeznvauw.now.sh/board
+## To access the site go here: https://showtime-dotnelyduf.now.sh/board
 
 
 # Here are some screen shots
