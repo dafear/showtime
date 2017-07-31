@@ -32,7 +32,7 @@ export default class Signin extends React.Component {
       // console.log(this.state.email);
       // console.log(this.state.password);
 
-      return instance.post('https://showtime-api-mdemtgetxd.now.sh/login', {
+      return instance.post('https://showtime-api-kakynqsype.now.sh/login', {
         
         email: this.state.email,
         password: this.state.password,

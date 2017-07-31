@@ -70,7 +70,7 @@ import axios from 'axios';
         });
 
            let userEmail = localStorage.getItem('email');
-              axios.post('https://showtime-api-mdemtgetxd.now.sh/savedSearches', 
+              axios.post('https://showtime-api-kakynqsype.now.sh/savedSearches', 
 
                 {places: places, term: this.state.term, userEmail: userEmail}
 
@@ -137,7 +137,7 @@ import axios from 'axios';
         componentDidMount() {
 
            let email = localStorage.getItem('email');
-              return axios.get('https://showtime-api-mdemtgetxd.now.sh/searches?email=' + email)
+              return axios.get('https://showtime-api-kakynqsype.now.sh/searches?email=' + email)
               .then(response => {
                 if (response.data.length) {
                   let last = response.data[response.data.length];

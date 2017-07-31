@@ -12,7 +12,7 @@ import './board.css';
 	 componentDidMount() {
     // console.log('whatever');
     let email = localStorage.getItem('email');
-      return axios.get('https://showtime-api-mdemtgetxd.now.sh/searches?email=' + email)
+      return axios.get('https://showtime-api-kakynqsype.now.sh/searches?email=' + email)
       .then(response => {
       	console.log(response);
       	this.setState({results: response.data});
