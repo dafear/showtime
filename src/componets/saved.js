@@ -10,8 +10,9 @@ import './board.css';
 		this.state={results: []};
 	}
 	 componentDidMount() {
-    console.log('whatever');
-      return axios.get('https://showtime-api-zszisxhapr.now.sh/searches')
+    // console.log('whatever');
+    let email = localStorage.getItem('email');
+      return axios.get('https://showtime-api-mdemtgetxd.now.sh/searches?email=' + email)
       .then(response => {
       	console.log(response);
       	this.setState({results: response.data});

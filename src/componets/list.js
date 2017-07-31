@@ -37,7 +37,7 @@ import './real.css';
                 console.log(this.state.email);
                 console.log(this.state.password);
 
-                return instance.post("https://showtime-api-zszisxhapr.now.sh/register/register", {
+                return instance.post('https://showtime-api-mdemtgetxd.now.sh/register/register', {
 
                   email: this.state.email,
                   password: this.state.password,
@@ -49,7 +49,7 @@ import './real.css';
                 .catch(function (error) {
                   console.log(error);
                 });
-                // return;
+               
               } else {
                 alert("You need an email and password");
 
@@ -64,7 +64,7 @@ import './real.css';
             }
 
             goToBoard() {
-                     // event.preventDefault();
+                     
                      if(this.canBeSubmitted()) {this.setState({logged: true})}
                        window.location.href = "/signin"
                    }
@@ -80,14 +80,14 @@ import './real.css';
 
 
                   const savedStyle = {
-                  position: 'absolute',
-                  top: 10,
-                  right: 0,
-                  backgroundColor: '#99c5ff',
-                  borderRadius: 5,
-                  width: 75,
-                  textAlign: 'center',
-                  padding: 5,
+                    position: 'absolute',
+                         top: 10,
+                          right: 0,
+                          backgroundColor: '#99c5ff',
+                      borderRadius: 5,
+                      width: 75,
+                      textAlign: 'center',
+                      padding: 5,
                   margin: 5,
                   color: 'white',
                   fontSize: 18, 
@@ -97,11 +97,11 @@ import './real.css';
                 return (
 
                  <Router>
-                 <div> 
-                 <Route exact path="/" render={() => <Redirect to="/board" />} />
-                 <Route exact path="/saves" component={Saved} />
-                 <Route exact path="/signin" component={Signin} />     
-                 <Route exact path="/myboard" component={Board} />
+                         <div> 
+                     <Route exact path="/" render={() => <Redirect to="/board" />} />
+                     <Route exact path="/saves" component={Saved} />
+                         <Route exact path="/signin" component={Signin} />     
+                     <Route exact path="/myboard" component={Board} />
                  <Route exact path="/board" render={() => (
                    this.state.logged ? (
                     <Redirect to="/myboard"/>
@@ -112,9 +112,9 @@ import './real.css';
 
                     <form onSubmit={this.handleSubmit}>
 
-                    <h1>Showtime</h1>
+                    <h1>SHOWTIME</h1>
 
-                    <h2 className="subtitle"> Sign up for access to the best shows in any genre!</h2>
+                    <h2 className="subtitle"> Sign up and search for access to the best venues in any genre!</h2>
                             <input
                             type="text"
                             placeholder="Enter email"

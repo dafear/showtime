@@ -5,8 +5,10 @@
   "homepage": "https://dafear.github.io/showtime",
   "dependencies": {
     "axios": "^0.16.2",
+    "g": "^2.0.1",
     "history": "^4.6.3",
     "material-ui": "^0.18.6",
+    "now": "^7.3.0",
     "npm-run-all": "^4.0.2",
     "react": "^15.6.1",
     "react-cookie": "^2.0.8",

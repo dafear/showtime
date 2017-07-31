@@ -38,70 +38,6 @@ html, body {
 
 
 
-/*input[type='text']
-button[type='submit'] {
-background: #fcfcfc;
-border: 2px solid #e7e7e7;
-margin: 20px auto;
-padding: 15px;
-width: 100%;
-display: block;
-border-radius: 3px;
-font-size: 18px;
-transition: opacity 0.4s;
-text-align: left;
-height: auto;
-}*/
-
-
- /*button[type='button'] {
-    color: blue;
-    font-weight: 500;
-    font-size: 16px;
-    text-align: center;
-    cursor: pointer;
-    margin-bottom: 0;
-    border-radius: 12px;
-    padding: 10px 20px;
-    letter-spacing: 2px;
-    margin-top: 12px;
-    border: none;
-    background-color: #0000FF;
-}*/
-
-
-
-
-
-
-
-
-
-
-  /*button[type='submit'] {
-    color: white;
-    background: #000000;
-    border: 0;
-    font-weight: 500;
-    font-size: 14px;
-    text-align: center;
-    cursor: pointer;
-    margin-bottom: 0;
-    height: auto;
-    margin-right: 15px;
-}*/
-
-/*input[type="button"] {
-  color: white;
-    background: #000000;
-    border: 0;
-    font-weight: 500;
-    font-size: 14px;
-    text-align: center;
-    cursor: pointer;
-    margin-bottom: 0;
-    height: auto;
-}*/
 
 
    input[type=submit]:enabled,
@@ -151,53 +87,6 @@ input[type=submit]:disabled,
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*input[type=submit]:enabled,
-button:enabled {
-  color: white;
-  background: #000000;
-  border: 20;
-  font-weight: 500;
-  font-size: 12px;
-  text-align: center;
-  cursor: pointer;
-  margin-bottom: 0;
-  height: auto;
-  border-radius: 5px;
-  padding: 10px;
-  letter-spacing: 2px;
-  margin-top: 12px;
-}*/
-
-/*input[type=submit]:disabled,
-button:disabled {
-color: blue;
-background: #000000;
-border: none;
-font-weight: 500;
-font-size: 12px;
-text-align: center;
-cursor: pointer;
-margin-bottom: 0;
-height: auto;
-border-radius: 5px;
-padding: 10px;
-letter-spacing: 2px;
-margin-top: 12px;
-}
-  */
 
 
 input {
