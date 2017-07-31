@@ -35,7 +35,7 @@ import './real.css';
                 var instance = axios.create({ headers: { 'Content-Type': 'application/json' } });
                 evt.preventDefault();
                 // console.log(this.state.email);
-                // console.log(this.state.password);
+                //  console.log(this.state.password);
 
                 return instance.post('https://showtime-api-kakynqsype.now.sh/register/register', {
 
