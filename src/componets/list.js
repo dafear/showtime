@@ -37,7 +37,7 @@ import './real.css';
                 // console.log(this.state.email);
                 //  console.log(this.state.password);
 
-                return instance.post('https://showtime-api-kakynqsype.now.sh/register/register', {
+                return instance.post('https://showtime-api.herokuapp.com/register/register', {
 
                   email: this.state.email,
                   password: this.state.password,

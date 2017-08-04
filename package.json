@@ -2,7 +2,7 @@
   "name": "showtime",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dafear.github.io/showtime",
+  "homepage": "/",
   "dependencies": {
     "axios": "^0.16.2",
     "g": "^2.0.1",
@@ -52,3 +52,4 @@
     "deploy": "gh-pages -d build"
   }
 }
+
