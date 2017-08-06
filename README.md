@@ -1,4 +1,6 @@
-# The name of my App is Showtime
+# The name of my App is Showtime 
+
+##Enjoy
 
 
 ##Use Case Why is this app useful?  Artist of every genre and people looking for shows both have something in common.
