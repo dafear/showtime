@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import List from './componets/list';
+import List from './components/list';
 import {shallow, mount} from 'enzyme';
 
 
