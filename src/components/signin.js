@@ -13,6 +13,7 @@ export default class Signin extends React.Component {
       password: '',
       logged: false,
       showError: false,
+      submitted: false,
     };
   }
 
@@ -38,6 +39,7 @@ export default class Signin extends React.Component {
         password: this.state.password,
       })
         .then(response => {
+          this.setState({submitted:true});
           console.log("It worked the server responded with:", response.data);
           localStorage.setItem('apiToken', response.data.token);
           localStorage.setItem('email', this.state.email);
@@ -96,6 +98,11 @@ export default class Signin extends React.Component {
             errorMessage =  "Sorry incorrect password!" 
       
         }
+        let loading = ""
+        if (this.state.submitted) {
+          loading =  <div className='loading-indicator'> </div> 
+        }
+        
 
 
   return (
@@ -123,7 +130,8 @@ export default class Signin extends React.Component {
                 <p>{errorMessage}</p>
                 
               </form>
-
+               {loading}
+               
               </div>
         
     )
