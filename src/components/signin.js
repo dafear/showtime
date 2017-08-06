@@ -28,6 +28,7 @@ export default class Signin extends React.Component {
   handleSubmit = (evt) => {
 
     if (this.canBeSubmitted()) {
+       // this.setState({});
       var instance = axios.create({ headers: { 'Content-Type': 'application/json' } });
       evt.preventDefault();
       // console.log(this.state.email);
@@ -41,14 +42,19 @@ export default class Signin extends React.Component {
         .then(response => {
           this.setState({submitted:true});
           console.log("It worked the server responded with:", response.data);
+        
           localStorage.setItem('apiToken', response.data.token);
           localStorage.setItem('email', this.state.email);
           if (response.data.term) {
              localStorage.setItem('term', response.data.term);
           }
 
+          if (response.data.success) {
+              this.goToBoard();
+              console.log(response.data.success);
+          }
           
-          this.goToBoard();
+          // this.goToBoard();
 
         })
         
@@ -90,18 +96,21 @@ export default class Signin extends React.Component {
            };
 
 
-
-
-           
-        let errorMessage = ""
-          if (this.state.error && this.state.password.length > 0) {
+            // console.log(this.state.error);
+         let errorMessage = ""
+        if (this.state.error && this.state.password.length > 0) {
             errorMessage =  "Sorry incorrect password!" 
-      
-        }
+         
+         } 
+
+
+
         let loading = ""
         if (this.state.submitted) {
           loading =  <div className='loading-indicator'> </div> 
         }
+
+
         
 
 
