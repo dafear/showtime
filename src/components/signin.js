@@ -18,17 +18,16 @@ export default class Signin extends React.Component {
   }
 
   handleEmailChange = (evt) => {
-      this.setState({ email: evt.target.value });
+      this.setState({ email: evt.target.value, error: false });
     }
 
-  handlePasswordChange = (evt) => {
-      this.setState({ password: evt.target.value });
+  handlePasswordChange = (evt) => { 
+      this.setState({ password: evt.target.value, error: false });
     }
 
   handleSubmit = (evt) => {
 
     if (this.canBeSubmitted()) {
-       // this.setState({});
       var instance = axios.create({ headers: { 'Content-Type': 'application/json' } });
       evt.preventDefault();
       // console.log(this.state.email);
@@ -96,9 +95,9 @@ export default class Signin extends React.Component {
            };
 
 
-            // console.log(this.state.error);
+           // console.log(this.state.error);
          let errorMessage = ""
-        if (this.state.error && this.state.password.length > 0) {
+        if (this.state.error) {
             errorMessage =  "Sorry incorrect password!" 
          
          } 
@@ -127,13 +126,13 @@ export default class Signin extends React.Component {
                   type="text"
                   placeholder="Enter email"
                   value={this.state.email}
-                  onChange={this.handleEmailChange}
+                  onChange={evt => this.setState({ email: evt.target.value, error: false }) }
                 /><br/>
                 <input
                   type="password"
                   placeholder="Enter password"
                   value={this.state.password}
-                  onChange={this.handlePasswordChange}
+                  onChange={evt => this.setState({ password: evt.target.value, error: false }) }
                 /><br/>
                 <button disabled={!isEnabled}>Sign In</button>
                 <p>{errorMessage}</p>
