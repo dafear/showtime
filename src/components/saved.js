@@ -1,13 +1,15 @@
 import React from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import ToggleDisplay from 'react-toggle-display';
 import './board.css';
+
 
  export default class Saved extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.state={results: []};
+		this.state={results: [], show: false};
 	}
 	 componentDidMount() {
     // console.log('whatever');
@@ -42,6 +44,17 @@ import './board.css';
   
  }
 
+
+
+ handleClick() {
+    this.setState({
+      show: !this.state.show
+    });
+  }
+
+
+
+
     render() {
 
     	 const style = {
@@ -64,12 +77,50 @@ import './board.css';
 
      
     };
+
+        const savedStyle2 = {
+
+                      position: 'absolute',
+                      top: 10,            
+                          right: 0,
+                          backgroundColor: '#99c5ff',
+                          borderRadius: 5,
+                          width: '98px',
+                          textAlign: 'center',
+                          padding: 5,
+                      margin: 5,
+                      color: 'white',
+                      fontSize: 14,
+                      fontWeight: 400,
+
+                    };
+
+
+
+      const savedStyle3 = {
+  
+                      top: 10,            
+                          right: 0,
+                          backgroundColor: '#99c5ff',
+                          borderRadius: 5,
+                          width: '98px',
+                          textAlign: 'center',
+                          padding: 5,
+                      margin: 5,
+                      color: 'white',
+                      fontSize: 14,
+                      fontWeight: 400,
+
+                    };
+
+
     	
-        let venues = [];
+      let venues = [];
        this.state.results.forEach((result, i) => {
-  let places = result.results.map((venue, j) => {
+    let places = result.results.map((venue, j) => {
     return (
-      <li key={j}>
+
+       <li key={j}>
         <a rel="noreferrer noopener" target='_blank' href={venue.url}>{venue.name}</a>
         <p>{venue.name}</p>
         <p>{venue.address}</p>
@@ -83,7 +134,6 @@ import './board.css';
       <h3>Term: "{result.term}"</h3>
       <p> {result.searchedAt} </p>
       <ul style={{ listStyleType: 'none' }}>{places}</ul>
-      
     </li>
   )
 });
@@ -91,8 +141,12 @@ import './board.css';
        
 		return (
          <div style={style} className="saved">
+          <button style={savedStyle2} onClick={ () => this.handleClick() }>show searches</button>
           <Link  style={buttonStyle} to="/myboard">Go back to searches</Link>
+          <ToggleDisplay show={this.state.show}>
+          <button style={savedStyle3} onClick={ () => this.handleClick() }>remove searches</button>
 		       {venues}
+          </ToggleDisplay>
        </div>   
      );
 	}	
