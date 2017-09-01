@@ -4,6 +4,7 @@ import { search } from '../actions/search';
 import { Link } from 'react-router-dom';
 import './board.css';
 import './demo.css';
+ import Background from '../images/yellowhands.png';
 import axios from 'axios';
 
 
@@ -22,6 +23,7 @@ import axios from 'axios';
 
         onChange = (e) => {
           this.setState({ term: e.target.value, warning: '' })
+              
         }
 
 
@@ -29,6 +31,7 @@ import axios from 'axios';
 
         clearSearch = (e) => {
           this.setState({venues: []})
+     
         }
 
 
@@ -172,15 +175,15 @@ import axios from 'axios';
                 fontSize: 14,
             borderRadius: 5,
             margin: 5,
-
-        };
+            
+        }
 
 
 
                 const button2Style = {
                    marginTop: 10,
-
-                };
+                 
+                }
 
 
 
@@ -197,7 +200,7 @@ import axios from 'axios';
                   padding: 5,
                   font: 8,
                   color: 'white',
-
+                   zIndex: 2,
                 }
 
 
@@ -217,7 +220,31 @@ import axios from 'axios';
                       fontSize: 14,
                       fontWeight: 400,
 
-                    };
+                    }
+
+
+                      const savedStyle4 = {
+                        
+                         backgroundImage: "url(" + Background + ")",
+                          backgroundRepeat: 'noRepeat',
+                          backgroundSize: 'cover',
+                              // position: 'absolute', 
+                             top: 0, 
+                             left: 0, 
+                            right: 0, 
+                            bottom: 0, 
+                             margin: 'auto', 
+                            minWidth: 50,
+                             minHeight: 50,
+                             heigth: 150,
+                            zIndex: 1,
+                            padding: 5,
+                             
+                          }
+                         
+
+
+                   
 
 
 
@@ -226,7 +253,7 @@ import axios from 'axios';
             this.state.venues.forEach((venue, i,) => {
 
               venues.push( 
-                <li key={i}>
+                <li className='venueItem' key={i}>
                 <a rel="noreferrer noopener" target='_blank' href={venue.url}>{ venue.name}</a>
                 <p> { venue.name } </p>
                 <p> { venue.location.address } </p>
@@ -281,7 +308,7 @@ import axios from 'axios';
 
        <Link  style={savedStyle} to="/saves">Go to saved searches</Link>
 
-    <div className="js-search-results"> 
+    <div style={savedStyle4} className="js-search-results"> 
 
          { venues }
 

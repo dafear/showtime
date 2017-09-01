@@ -36,6 +36,14 @@ html, body {
  text-decoration: none;
  }
 
+ li.venueItem {
+  border-radius: 5px;
+  padding: 24px 0;
+ background: rgba(255,255,255,0.30);
+ margin: 20px auto;
+ width: 33%;
+
+}
 
 
 

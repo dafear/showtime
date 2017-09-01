@@ -120,7 +120,7 @@ import './board.css';
     let places = result.results.map((venue, j) => {
     return (
 
-       <li key={j}>
+       <li className='venueItem' key={j}>
         <a rel="noreferrer noopener" target='_blank' href={venue.url}>{venue.name}</a>
         <p>{venue.name}</p>
         <p>{venue.address}</p>
