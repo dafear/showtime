@@ -140,6 +140,10 @@ input[type=submit]:disabled,
 
   }
 
+input {
+  padding: 12px;
+  margin-bottom: 1em;
+}
 
 
 #trigger-overlay:disabled {
