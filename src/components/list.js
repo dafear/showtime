@@ -93,9 +93,9 @@ import './real.css';
                   fontSize: 18, 
                 };
 
-                const style2 = {
-                  color: "black",
-                }
+                // const style2 = {
+                //   color: '#99C5FF',
+                // }
 
 
                 return (
@@ -118,7 +118,7 @@ import './real.css';
 
                     <h1>SHOWTIME</h1>
 
-                    <h2 style={style2} className="subtitle">Sign up and search for access to the best venues in any genre!
+                    <h2 className="subtitle">Sign up and search for access to the best venues in any genre!
                      <br/>For testing use ("test@gmail.com" "password: pass1")</h2>
                             <input
                             type="text"
