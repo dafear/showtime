@@ -3,8 +3,10 @@ import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 import Board from './board';
 import Saved from './saved'; 
 import Signin from './signin';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import axios from 'axios';
+import cooler from '../images/cooler.png';
+import search from '../images/search.png';
 import './real.css';
 
 
@@ -143,10 +145,28 @@ import './real.css';
                             )
 
                     )} />
-
+                 <div className="super">
+                 <img className="wow" src={search} alt="search" />
+                 <div className="oj">
+                  <h3 className="para1">Find Any Genre Of Show You Want!</h3>
+                  <p> Showtime allows you search for any show venue you like</p>
+                 </div>
+                   
+                   </div>
+                    <div className="super">
+                 <img className="wow" src={cooler} alt="cooler" />
+                 <div className="oj">
+                  <h3 className="para2">Save Your Search!</h3>
+                  <p> Your saved search includes a live URL, Name and Address.</p>
+                 </div>
+                   
+                   </div>
                  </div>
 
                  </Router>
+                
+                 
+                
 
                  )
               }

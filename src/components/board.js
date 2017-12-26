@@ -4,7 +4,7 @@ import { search } from '../actions/search';
 import { Link } from 'react-router-dom';
 import './board.css';
 import './demo.css';
- import Background from '../images/yellowhands.png';
+// import Background from '../images/bluelight.png';
 import axios from 'axios';
 
 
@@ -223,24 +223,24 @@ import axios from 'axios';
                     }
 
 
-                      const savedStyle4 = {
+                      // const savedStyle4 = {
                         
-                         backgroundImage: "url(" + Background + ")",
-                          backgroundRepeat: 'noRepeat',
-                          backgroundSize: 'cover',
-                              // position: 'absolute', 
-                             top: 0, 
-                             left: 0, 
-                            right: 0, 
-                            bottom: 0, 
-                             margin: 'auto', 
-                            minWidth: 50,
-                             minHeight: 50,
-                             heigth: 150,
-                            zIndex: 1,
-                            padding: 5,
+                      //    backgroundImage: "url(" + Background + ")",
+                      //     backgroundRepeat: 'noRepeat',
+                      //     backgroundSize: 'cover',
+                      //         // position: 'absolute', 
+                      //        top: 0, 
+                      //        left: 0, 
+                      //       right: 0, 
+                      //       bottom: 0, 
+                      //        margin: 'auto', 
+                      //       minWidth: 50,
+                      //        minHeight: 50,
+                      //        heigth: 150,
+                      //       zIndex: 1,
+                      //       padding: 5,
                              
-                          }
+                      //     }
                          
 
 
@@ -308,7 +308,7 @@ import axios from 'axios';
 
        <Link  style={savedStyle} to="/saves">Go to saved searches</Link>
 
-    <div style={savedStyle4} className="js-search-results"> 
+    <div className="js-search-results"> 
 
          { venues }
 

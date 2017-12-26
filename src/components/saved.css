@@ -9,7 +9,7 @@ html, body {
   display: none;
 }*/
 
-.Signin {
+.saved {
   background: #000000;
   color: white;
   font-family: 'Roboto', helvetica, sans-serif;
@@ -17,10 +17,10 @@ html, body {
   margin: 0;
   padding-top: 60px;
   padding-bottom: 120%;
-  background-image: url("../background.png");
+  background-image: url("../images/yellowhands.png");
   background-repeat: no-repeat;
   background-size: cover;
-   position: absolute; 
+  position: absolute; 
   top: 0; 
   left: 0; 
   right: 0; 
@@ -28,8 +28,7 @@ html, body {
   margin: auto; 
   min-width: 50%;
   min-height: 50%;
-  
-
+ 
 }
 
  a {
@@ -37,82 +36,9 @@ html, body {
  text-decoration: none;
  }
 
- li.venueItem {
-  border-radius: 5px;
-  padding: 24px 0;
- background: rgba(255,255,255,0.30);
- margin: 20px auto;
- width: 33%;
-
-}
 
 
-
-/*input[type='text']
-button[type='submit'] {
-background: #fcfcfc;
-border: 2px solid #e7e7e7;
-margin: 20px auto;
-padding: 15px;
-width: 100%;
-display: block;
-border-radius: 3px;
-font-size: 18px;
-transition: opacity 0.4s;
-text-align: left;
-height: auto;
-}*/
-
-
- /*button[type='button'] {
-    color: blue;
-    font-weight: 500;
-    font-size: 16px;
-    text-align: center;
-    cursor: pointer;
-    margin-bottom: 0;
-    border-radius: 12px;
-    padding: 10px 20px;
-    letter-spacing: 2px;
-    margin-top: 12px;
-    border: none;
-    background-color: #0000FF;
-}*/
-
-
-
-
-
-
-
-
-
-
-  /*button[type='submit'] {
-    color: white;
-    background: #000000;
-    border: 0;
-    font-weight: 500;
-    font-size: 14px;
-    text-align: center;
-    cursor: pointer;
-    margin-bottom: 0;
-    height: auto;
-    margin-right: 15px;
-}*/
-
-/*input[type="button"] {
-  color: white;
-    background: #000000;
-    border: 0;
-    font-weight: 500;
-    font-size: 14px;
-    text-align: center;
-    cursor: pointer;
-    margin-bottom: 0;
-    height: auto;
-}*/
-
+ 
 
    input[type=submit]:enabled,
    button:enabled {
@@ -128,6 +54,7 @@ height: auto;
     margin-top: 12px;
     border: none;
     background-color: #99c5ff;
+
 
   }
 
@@ -161,51 +88,6 @@ input[type=submit]:disabled,
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-/*input[type=submit]:enabled,
-button:enabled {
-  color: white;
-  background: #000000;
-  border: 20;
-  font-weight: 500;
-  font-size: 12px;
-  text-align: center;
-  cursor: pointer;
-  margin-bottom: 0;
-  height: auto;
-  border-radius: 5px;
-  padding: 10px;
-  letter-spacing: 2px;
-  margin-top: 12px;
-}*/
-
-/*input[type=submit]:disabled,
-button:disabled {
-color: blue;
-background: #000000;
-border: none;
-font-weight: 500;
-font-size: 12px;
-text-align: center;
-cursor: pointer;
-margin-bottom: 0;
-height: auto;
-border-radius: 5px;
-padding: 10px;
-letter-spacing: 2px;
-margin-top: 12px;
-}
-  */
 
 
 input {

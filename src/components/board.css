@@ -16,6 +16,7 @@ html, body {
   padding: 0;
   margin: 0;
   padding-top: 60px;
+  padding-bottom: 120%;
   background-image: url("../background.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -27,8 +28,12 @@ html, body {
   margin: auto; 
   min-width: 50%;
   min-height: 50%;
+
+
  
 }
+
+
 
  a {
  color: #ff8000;

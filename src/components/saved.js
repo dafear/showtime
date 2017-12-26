@@ -2,7 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ToggleDisplay from 'react-toggle-display';
-import './board.css';
+import './saved.css';
+// import './board.css';
 
 
  export default class Saved extends React.Component {
